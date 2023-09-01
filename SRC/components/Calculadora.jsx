@@ -12,13 +12,13 @@ const Calculadora = () => {
  
   useEffect(() => {
     //ESTO SE EJECUTA UNA SOLA VEZ
-    ToastAndroid.show("se cargo la aplicacion corectamente", ToastAndroid.SHORT)
+    ToastAndroid.show("se cargo la aplicacion correctamente", ToastAndroid.SHORT)
   }, [])
 
-  const Sumar = () => {
+  const SUMARL = () => {
     let rta = parseInt(numero1) + parseInt(numero2);
     setResultado(rta);
-    setMostrarResultado(true);
+    setMostrarResultado();
     ToastAndroid.show('Se ha realizado la suma!', ToastAndroid.SHORT);
   }
 
@@ -29,7 +29,7 @@ const Calculadora = () => {
       margin: 10,
       borderWidth: 1,
       padding: 10,
-      borderColor: 'gray',
+      borderColor: 'blue',
       borderWidth: 3,
     },
   });
@@ -38,14 +38,14 @@ const Calculadora = () => {
     <View >
       <Text>CALCULADORA</Text>
 
-      <TextInput style={estilos.inputsTexto} onChangeText={setNumero1} value={numero1} placeholder="Numero 1" keyboardType="numeric" />
+      <TextInput style={estilos.inputsTexto} onChangeText={setNumero1} value={numero1} placeholder="Numero 1" keyboardType="numeric" color ="white"/>
 
-      <TextInput style={estilos.inputsTexto} onChangeText={setNumero2} value={numero2} placeholder="Número 2" keyboardType="numeric" />
+      <TextInput style={estilos.inputsTexto} onChangeText={setNumero2} value={numero2} placeholder="Número 2" keyboardType="numeric" color="white"/>
 
-      <Button onPress={Sumar} title="Sumar" color="#841584" />
+      <Button onPress={SUMARL} title="Sumar" color="red" />
 
-      {resultado>10 && (<Text>El resultado es {resultado}</Text>)}
-
+      {resultado>0 && (<Text>El resultado es {resultado}</Text>)}
+ 
     
 
 
