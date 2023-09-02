@@ -4,10 +4,9 @@ import { StyleSheet, Text, View, TextInput, ToastAndroid, Button } from 'react-n
 
 const Cambiarname = () => {
 
-  const [CambioName, setcambioName] = useState([]);
+  const [cambioName, setcambioName] = useState([Maria_Jose]);
   //const [numero2, setNumero2] = useState(30);
   const [resultadoName, setResultadoName] = useState(0);
-  
   const [mostrarResultadoName, setMostrarResultadoName] = useState(false);
  
     useEffect(() => {
@@ -16,10 +15,10 @@ const Cambiarname = () => {
   }, [])
 
   const cambio = () => {
-    let rta =0;
-     rta.push(CambioName);
+    let rta;
+     rta.push(cambioName);
     setResultadoName(rta);
-    setMostrarResultadoName();
+    setmostrarResultadoName();
     ToastAndroid.show('Se ha realizado la mostrado el cambio de Nombre!', ToastAndroid.SHORT);
   }
 
@@ -40,11 +39,11 @@ const Cambiarname = () => {
 
   return (
     <View >
-      <Text>iNGRESE EL NOMBRE</Text>
+      <Text>INGRESE EL NOMBRE</Text>
 
-      <TextInput style={estilos.inputsTexto} onChangeText={setcambioName} value={CambioName} placeholder="Nombre new" keyboardType="numeric" color ="white"/>
+      <TextInput style={estilos.inputsTexto} onChangeText={setcambioName} value={cambioName} placeholder="Nombre new" keyboardType="numeric" color ="white"/>
 
-      <Button onPress={cambio} title="VAMOS A CAMBIAR DE NOMBRE"color="red" />
+      <Button onPress={cambio} title="CAMBIAR DE NOMBRE"color="red" />
 
       {resultadoName>0 && (<Text>El Nombre Nuevo es: {resultadoName}</Text>)}
  
